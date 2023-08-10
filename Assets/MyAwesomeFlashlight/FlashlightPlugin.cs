@@ -5,6 +5,12 @@ using UnityEngine;
 public class FlashlightPlugin : MonoBehaviour
 {
     public AndroidJavaClass javaObject;
+
+    private void Awake()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+    }
+
     void Start()
     {
         javaObject = new AndroidJavaClass("com.myflashlight.flashlightlib.Flashlight");
